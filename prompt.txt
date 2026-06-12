@@ -1,23 +1,28 @@
-Create a repository in GitHub.
-Submit the link to the GitHub repository in Moodle. (In the online text field provided in the assignment)
-Daily push to GitHub is mandatory.
-Evaluation Rubrics:
+I started thinking about making a simple graphics editor in C that could
+run in the terminal. I didn’t want anything too advanced, just something
+basic using characters like * and _. The idea was to treat the screen
+like a grid and draw shapes on it.
 
-Total marks: 5
-Copied Caught -  0 marks.
-No submission - 1 mark.
-Copied  - 2 marks.
-Original partially complete - 3 marks.
-Original almost complete - 4 marks.
-Original Complete - 5 marks.
-Problem Statement: Design and implement a menu-driven 2D Graphics Editor in C using a 2D character array as the drawing canvas. The canvas should initially be filled with the character _ (underscore), and graphical objects should be drawn using the character * (asterisk).
+So first, I thought of using a 2D array to act like a canvas where each
+position holds a character. Then I added a way to print that canvas so I
+could actually see what was happening on the screen.
 
-Write functions to draw a circle, rectangle, line, and triangle.
-You should be able to
-add objects to the picture,
-delete objects from the picture, and
-modify objects in the picture.
-Use a 2d array of characters to store the picture.
-Write a function to display the picture.
+After that, I worked on adding shapes one by one. I started with a line
+by connecting two points. Then I added rectangles using two corner
+points. Later, I tried making a circle using a center and radius, and
+also added a triangle using three points.
 
-Additionally, you can use the ncurses package to create menus and draw pictures.
+Once drawing was working, I wanted to make it interactive. So I added a
+menu where the user can choose options like adding a shape, deleting a
+shape, modifying it, or just displaying the canvas.
+
+Then I realized I needed to store all the shapes somewhere, so I used
+structures and gave each shape an ID. That made it easier to delete or
+change specific shapes instead of redrawing everything manually.
+
+Finally, I made sure that whenever something changes, the whole canvas
+gets redrawn properly so everything looks clean. I also added a small
+demo scene to check if all shapes are working together correctly.
+
+Overall, I kept the program simple and focused on making it work
+properly in the terminal in an easy-to-understand way.
